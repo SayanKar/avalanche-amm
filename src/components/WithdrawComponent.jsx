@@ -22,6 +22,8 @@ export default function WithdrawComponent(props) {
             }
         }
     };
+
+    // Gets the maximun share one can withdraw
     const getMaxShare = async () => {
         if (props.contract !== null) {
             setAmountOfShare(props.maxShare);
@@ -35,6 +37,7 @@ export default function WithdrawComponent(props) {
         } else alert("Connect to Metamask");
     };
 
+    // Withdraws the share
     const withdrawShare = async () => {
         if (["", "."].includes(amountOfShare)) {
             alert("Amount should be a valid number");

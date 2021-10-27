@@ -9,6 +9,7 @@ export default function ProvideComponent(props) {
     const [amountOfKothi, setAmountOfKothi] = useState(0);
     const [error, setError] = useState("");
 
+    // Gets estimates of a token to be provided in the pool given the amount of other token
     const getProvideEstimate = async (token, value) => {
         if (["", "."].includes(value)) return;
         if (props.contract !== null) {
@@ -45,6 +46,7 @@ export default function ProvideComponent(props) {
         getProvideEstimate("KOTHI", e.target.value);
     };
 
+    // Adds liquidity to the pool
     const provide = async () => {
         if (["", "."].includes(amountOfKar) || ["", "."].includes(amountOfKothi)) {
             alert("Amount should be a valid number");

@@ -10,6 +10,7 @@ export default function App() {
 
     let provider, signer, add;
 
+    // Connects to Metamask and sets the myContract state with a new instance of the contract
     async function connect() {
         let res = await connectToMetamask();
         if (res === true) {
@@ -28,6 +29,7 @@ export default function App() {
         }
     }
 
+    // Helps open Metamask
     async function connectToMetamask() {
         try {
             await window.ethereum.enable();

@@ -15,6 +15,7 @@ export default function FaucetComponent(props) {
         setAmountOfKar(e.target.value);
     };
 	
+    // Funds the account with given amount of Tokens 
     async function onClickFund() {
         if (props.contract === null) {
             alert("Connect to Metamask");

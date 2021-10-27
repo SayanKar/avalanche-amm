@@ -14,6 +14,7 @@ export default function SwapComponent(props) {
         getSwapEstimateAmountTo(amountFrom);
     };
 
+    // Given amount of token in AmountFrom, estimates amount of token in amountTo, i.e. tokens recieved after swap
     const getSwapEstimateAmountTo = async (val) => {
         if (["", "."].includes(val)) return;
         if (props.contract !== null) {
@@ -35,6 +36,7 @@ export default function SwapComponent(props) {
         }
     };
 
+    // Given amount of tokens in amountTo, i.e. the amount recieved after swap, estimates the amount of tokens in amountFrom
     const getSwapEstimateAmountFrm = async (val) => {
         if (["", "."].includes(val)) return;
         if (props.contract !== null) {
@@ -68,6 +70,7 @@ export default function SwapComponent(props) {
         getSwapEstimateAmountFrm(val.target.value);
     };
 
+    // Helps swap a token to another.
     const onSwap = async () => {
         if (["", "."].includes(amountFrom)) {
             alert("Amount should be a valid number");
